@@ -1,0 +1,37 @@
+Credits
+=======
+
+All credits belong to the original authors
+
+* Osmo Salomaa <otsaloma@cc.hut.fi>
+* Fabio Zendhi Nagao <nagaozen@hotmail.com>
+* Vincent Petithory <vincent.petithory@gmail.com>
+* Alin Avasilcutei
+* Frederic Back <fredericback@gmail.com>
+* Alejandro Garcia <alex@igalia.com>
+* Matthew Dugan <matthew.dugan@gmail.com>
+* Jesse van den Kieboom <jesse@icecrew.nl>
+* Paolo Borelli <pborelli@katamail.com>
+* Steve Frécinaux <code@istique.net>
+* Ignacio Casal Quinteiro <nacho.resa@gmail.com>
+* Kawaikunee <kawaikunee0@gmail.com>
+* Curtis Hovey <sinzui.is@verizon.net>
+* Gary Haran <gary.haran@gmail.com>
+* Caolan McMahon
+* Kilian Valkhof
+* Nando Vieira <fnando dot vieira at gmail dot com>
+* Steve Frécinaux
+* David Lynch <kemayo@gmail.com>
+* Alexandre da Silva <lexrupy at gmail dot com>
+* Steve Frécinaux <steve@istique.net>
+* Mads Buus Jensen <online@buus.net>
+* Éverton Ribeiro <nuxlli@gmail.com>
+* Elia Sarti
+* rob miller <funky.style@gmail.com>
+* Eckhard M. Jäger <Bart@neeneenee.de>
+* Mike Crittenden <mike@mikethecoder.com>
+* Marc Harter <wavded@gmail.com>
+* Ivan Kerin <kerin@rizn.info>
+* Ulrik Sverdrup <ulrik.sverdrup@gmail.com>
+* Daniel Pozzi <bonndan76@googlemail.com>
+
