@@ -1,0 +1,10 @@
+Dotfiles
+========
+
+My personal dotfiles, including Gedit goodies, Bash, etc.
+
+Note
+----
+
+Several works were authored by other people, so credits belongs to them
+
