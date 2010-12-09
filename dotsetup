@@ -1,4 +1,5 @@
 #! /bin/bash
 
-echo 'COMING SOON'
+cp -R gnome2/* ~/.gnome2/
+cp -R local/* ~/.local/
 
