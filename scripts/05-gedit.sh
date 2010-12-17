@@ -12,6 +12,7 @@ cd `dirname $0`
 
 PLUGINS=../build/gnome2/gedit/plugins
 SRC=../src
+GMATE_PLUGINS=$SRC/gmate/plugins
 
 if [ ! -d $PLUGINS ]; then
     mkdir -p $PLUGINS
@@ -21,10 +22,13 @@ fi
 # PLUGINS
 #========================================================================
 
+# align
+echo "=> align"
+cp -R $GMATE_PLUGINS/align* $PLUGINS
+
 # autocomplete
 echo "=> autocomplete"
 cp -R $SRC/gedit-plugin-autocomplete/* $PLUGINS
-rm $PLUGINS/autocomplete/lib/asp.json
 
 # classbrowser
 echo "=> classbrowser"
@@ -34,14 +38,17 @@ cp -R $SRC/gedit-plugin-classbrowser/* $PLUGINS
 echo "=> folding"
 cp -R $SRC/gedit-plugin-folding/* $PLUGINS
 
+# gemini
+echo "=> gemini"
+cp -R $GMATE_PLUGINS/gemini* $PLUGINS
+
 # phpcompletion
 echo "=> phpcompletion"
 cp -R $SRC/gedit-plugin-phpcompletion/plugin/* $PLUGINS
 
 # pylint
 echo "=> pylint"
-cp -R $SRC/gedit-plugin-pylint/pylint $PLUGINS
-cp $SRC/gedit-plugin-pylint/pylint.gedit-plugin $PLUGINS
+cp -R $SRC/gedit-plugin-pylint/pylint* $PLUGINS
 
 # quickhighlightmode
 echo "=> quickhighlightmode"
@@ -52,10 +59,21 @@ chmod 644 $PLUGINS/quickhighlightmode.gedit-plugin
 echo "=> smarthome"
 cp -R $SRC/gedit-plugin-smarthome/* $PLUGINS
 
+# smart_indent
+echo "=> smart_indent"
+cp -R $GMATE_PLUGINS/smart_indent* $PLUGINS
+
 # snapopen
 echo "=> snapopen"
 cp -R $SRC/gedit-plugin-snapopen/* $PLUGINS
-rm $PLUGINS/snapopen/CHANGELOG $PLUGINS/snapopen/INSTALL $PLUGINS/snapopen/README $PLUGINS/snapopen/VERSION
+
+# tabswitch
+echo "=> tabswitch"
+cp -R $GMATE_PLUGINS/tabswitch* $PLUGINS
+
+# trailsave
+echo "=> trailsave"
+cp -R $GMATE_PLUGINS/trailsave* $PLUGINS
 
 # zencoding
 echo "=> zencoding"
