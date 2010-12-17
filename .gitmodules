@@ -1,0 +1,45 @@
+[submodule "src/gedit-plugin-autocomplete"]
+	path = src/gedit-plugin-autocomplete
+	url = https://github.com/nagaozen/gedit-plugin-autocomplete.git
+[submodule "src/gedit-plugin-phpcompletion"]
+	path = src/gedit-plugin-phpcompletion
+	url = https://github.com/jessevdk/gedit-php-completion.git
+[submodule "src/gedit-plugin-quickhighlightmode"]
+	path = src/gedit-plugin-quickhighlightmode
+	url = https://github.com/nagaozen/gedit-plugin-quickhighlightmode.git
+[submodule "src/gedit-plugin-classbrowser"]
+	path = src/gedit-plugin-classbrowser
+	url = https://github.com/nagaozen/gedit-plugin-classbrowser.git
+[submodule "src/gedit-plugins"]
+	path = src/gedit-plugins
+	url = https://github.com/jessevdk/gedit-plugins.git
+[submodule "src/gedit-lang-coffeescript"]
+	path = src/gedit-lang-coffeescript
+	url = https://github.com/wavded/gedit-coffeescript.git
+[submodule "src/gedit-plugin-folding"]
+	path = src/gedit-plugin-folding
+	url = https://github.com/mikecrittenden/gedit-folding.git
+[submodule "src/gedit-plugin-zencoding"]
+	path = src/gedit-plugin-zencoding
+	url = https://github.com/mikecrittenden/zen-coding-gedit.git
+[submodule "src/gedit-plugin-snapopen"]
+	path = src/gedit-plugin-snapopen
+	url = https://github.com/FooBarWidget/gedit-snapopen-plugin.git
+[submodule "src/gedit-plugin-smarthome"]
+	path = src/gedit-plugin-smarthome
+	url = https://github.com/kemayo/gedit-smarthome.git
+[submodule "src/gedit-plugin-pylint"]
+	path = src/gedit-plugin-pylint
+	url = https://github.com/phsilva/gedit-pylint.git
+[submodule "src/gedit-plugin-sessions"]
+	path = src/gedit-plugin-sessions
+	url = https://github.com/goldx/sessions.git
+[submodule "src/gedit-plugin-minifier"]
+	path = src/gedit-plugin-minifier
+	url = https://github.com/trentrichardson/Gedit-Minifier-Plugin.git
+[submodule "src/gedit-plugin-clientside"]
+	path = src/gedit-plugin-clientside
+	url = https://github.com/trentrichardson/Gedit-Clientside-Plugin.git
+[submodule "src/gedit-plugin-coffeePlusPlus"]
+	path = src/gedit-plugin-coffeePlusPlus
+	url = https://github.com/Rixius/gedit-coffeePlusPlus.git
