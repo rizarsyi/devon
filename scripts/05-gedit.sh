@@ -30,16 +30,6 @@ rm $PLUGINS/autocomplete/lib/asp.json
 echo "=> classbrowser"
 cp -R $SRC/gedit-plugin-classbrowser/* $PLUGINS
 
-# codecomment
-echo "=> codecomment"
-cp -R $SRC/gedit-plugins/plugins/codecomment/* $PLUGINS
-mv $PLUGINS/codecomment.gedit-plugin.desktop.in.in $PLUGINS/codecomment.gedit-plugin
-
-# colorpicker
-echo "=> colorpicker"
-cp -R $SRC/gedit-plugins/plugins/colorpicker/* $PLUGINS
-mv $PLUGINS/colorpicker.gedit-plugin.desktop.in.in $PLUGINS/colorpicker.gedit-plugin
-
 # folding
 echo "=> folding"
 cp -R $SRC/gedit-plugin-folding/* $PLUGINS
@@ -58,17 +48,6 @@ echo "=> quickhighlightmode"
 cp -R $SRC/gedit-plugin-quickhighlightmode/* $PLUGINS
 chmod 644 $PLUGINS/quickhighlightmode.gedit-plugin
 
-# sessionsaver
-echo "=> sessionsaver"
-cp -R $SRC/gedit-plugins/plugins/sessionsaver $PLUGINS
-mv $PLUGINS/sessionsaver/sessionsaver.gedit-plugin.desktop.in.in $PLUGINS/sessionsaver.gedit-plugin
-rm $PLUGINS/sessionsaver/*.am
-
-# smartspaces
-echo "=> smartspaces"
-cp -R $SRC/gedit-plugins/plugins/smartspaces/* $PLUGINS
-mv $PLUGINS/smartspaces.gedit-plugin.desktop.in.in $PLUGINS/smartspaces.gedit-plugin
-
 # smarthome
 echo "=> smarthome"
 cp -R $SRC/gedit-plugin-smarthome/* $PLUGINS
@@ -78,20 +57,11 @@ echo "=> snapopen"
 cp -R $SRC/gedit-plugin-snapopen/* $PLUGINS
 rm $PLUGINS/snapopen/CHANGELOG $PLUGINS/snapopen/INSTALL $PLUGINS/snapopen/README $PLUGINS/snapopen/VERSION
 
-# terminal
-echo "=> terminal"
-cp -R $SRC/gedit-plugins/plugins/terminal/* $PLUGINS
-mv $PLUGINS/terminal.gedit-plugin.desktop.in.in $PLUGINS/terminal.gedit-plugin
-
-# copy the gpdefs.py
-cp $SRC/gedit-plugins/plugins/gpdefs.py.in $PLUGINS/gpdefs.py
-
 # zencoding
 echo "=> zencoding"
 cp -R $SRC/gedit-plugin-zencoding/* $PLUGINS
 
 # cleanup unnecessary files
-rm $PLUGINS/*.am
 rm $PLUGINS/*.rst
 rm $PLUGINS/*.md
 rm -rf $PLUGINS/*.git*
@@ -106,3 +76,6 @@ echo "installed to ~/.gnome2/gedit/plugins"
 cp -R $PLUGINS/* $GEDIT_PLUGINS
 rm -rf ../build/gnome2
 
+# codecomment, colorpicker, sessionsaver, smartspaces, terminal installed through synaptic
+echo "grab other plugins from package manager"
+yes | sudo aptitude install gedit-plugins

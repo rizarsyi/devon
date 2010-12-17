@@ -10,9 +10,6 @@
 [submodule "src/gedit-plugin-classbrowser"]
 	path = src/gedit-plugin-classbrowser
 	url = https://github.com/nagaozen/gedit-plugin-classbrowser.git
-[submodule "src/gedit-plugins"]
-	path = src/gedit-plugins
-	url = https://github.com/jessevdk/gedit-plugins.git
 [submodule "src/gedit-lang-coffeescript"]
 	path = src/gedit-lang-coffeescript
 	url = https://github.com/wavded/gedit-coffeescript.git
