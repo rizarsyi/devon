@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# SCRIPT_DIR
+cd `dirname $0`
+
 echo "copying nanorc to ~/.nanorc"
 cp ../src/nanorc ~/.nanorc
 
