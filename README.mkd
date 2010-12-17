@@ -1,10 +1,4 @@
-Dotfiles
-========
+Devon
+=====
 
-My personal dotfiles, including Gedit, Bash, etc.
-
-Note
-----
-
-Several works were authored by other people, so credits belongs to them
-
+My personal dev environment on Ubuntu. Several works were authored by other people, so credits belongs to them.
