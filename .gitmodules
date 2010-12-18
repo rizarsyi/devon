@@ -25,9 +25,6 @@
 [submodule "src/gedit-plugin-smarthome"]
 	path = src/gedit-plugin-smarthome
 	url = https://github.com/kemayo/gedit-smarthome.git
-[submodule "src/gedit-plugin-pylint"]
-	path = src/gedit-plugin-pylint
-	url = https://github.com/phsilva/gedit-pylint.git
 [submodule "src/gedit-plugin-sessions"]
 	path = src/gedit-plugin-sessions
 	url = https://github.com/goldx/sessions.git

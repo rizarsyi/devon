@@ -46,10 +46,6 @@ cp -R $GMATE_PLUGINS/gemini* $PLUGINS
 echo "=> phpcompletion"
 cp -R $SRC/gedit-plugin-phpcompletion/plugin/* $PLUGINS
 
-# pylint
-echo "=> pylint"
-cp -R $SRC/gedit-plugin-pylint/pylint* $PLUGINS
-
 # quickhighlightmode
 echo "=> quickhighlightmode"
 cp -R $SRC/gedit-plugin-quickhighlightmode/* $PLUGINS
@@ -97,3 +93,4 @@ rm -rf ../build/gnome2
 # codecomment, colorpicker, sessionsaver, smartspaces, terminal installed through synaptic
 echo "grab other plugins from package manager"
 yes | sudo aptitude install gedit-plugins
+
