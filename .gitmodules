@@ -25,18 +25,9 @@
 [submodule "src/gedit-plugin-smarthome"]
 	path = src/gedit-plugin-smarthome
 	url = https://github.com/kemayo/gedit-smarthome.git
-[submodule "src/gedit-plugin-sessions"]
-	path = src/gedit-plugin-sessions
-	url = https://github.com/goldx/sessions.git
-[submodule "src/gedit-plugin-minifier"]
-	path = src/gedit-plugin-minifier
-	url = https://github.com/trentrichardson/Gedit-Minifier-Plugin.git
 [submodule "src/gedit-plugin-clientside"]
 	path = src/gedit-plugin-clientside
 	url = https://github.com/trentrichardson/Gedit-Clientside-Plugin.git
-[submodule "src/gedit-plugin-coffeePlusPlus"]
-	path = src/gedit-plugin-coffeePlusPlus
-	url = https://github.com/Rixius/gedit-coffeePlusPlus.git
 [submodule "src/gmate"]
 	path = src/gmate
 	url = https://github.com/gmate/gmate.git
