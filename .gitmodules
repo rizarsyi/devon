@@ -31,3 +31,6 @@
 [submodule "src/gmate"]
 	path = src/gmate
 	url = https://github.com/gmate/gmate.git
+[submodule "src/gedit-plugin-tabs_extend"]
+	path = src/gedit-plugin-tabs_extend
+	url = git://github.com/nuxlli/gedit-tabsextend.git
