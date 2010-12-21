@@ -25,6 +25,11 @@ cp -R $GMATE_PLUGINS/align* $PLUGINS
 echo "=> autocomplete"
 cp -R $SRC/gedit-plugin-autocomplete/* $PLUGINS
 
+# autocompletepython
+echo "=> autocompletepython"
+cp -R $SRC/gedit-plugin-autocompletepython/autocompletepython* $PLUGINS
+cp -R $SRC/pycodecompletation/pycodecompletation $PLUGINS/autocompletepython
+
 # classbrowser
 echo "=> classbrowser"
 cp -R $SRC/gedit-plugin-classbrowser/* $PLUGINS
