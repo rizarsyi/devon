@@ -46,6 +46,10 @@ cp -R $SRC/gedit-plugin-folding/* $PLUGINS
 echo "=> gemini"
 cp -R $GMATE_PLUGINS/gemini* $PLUGINS
 
+# zencoding
+echo "=> markdownpreview"
+cp -R $SRC/gedit-plugin-markdownpreview/plugins/* $PLUGINS
+
 # phpcompletion
 echo "=> phpcompletion"
 cp -R $SRC/gedit-plugin-phpcompletion/plugin/* $PLUGINS
@@ -105,6 +109,10 @@ fi
 # coffeescript
 echo "=> coffeescript"
 cp -R $SRC/gedit-lang-coffeescript/coffee_script.lang $SPECS/coffee_script.lang
+
+# coffeescript
+echo "=> markdown"
+cp -R $SRC/gedit-plugin-markdownpreview/language-specs/markdown.lang $SPECS/markdown.lang
 
 echo "installed to ~/.local/share/gtksourceview-2.0/language-specs"
 

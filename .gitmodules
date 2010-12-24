@@ -40,3 +40,6 @@
 [submodule "src/pycodecompletation"]
 	path = src/pycodecompletation
 	url = https://github.com/nsigustavo/pycodecompletation.git
+[submodule "src/gedit-plugin-markdown"]
+	path = src/gedit-plugin-markdown
+	url = https://github.com/fredb219/gedit-markdown.git
