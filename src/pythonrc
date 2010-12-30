@@ -1,0 +1,5 @@
+try:
+    import readline
+    import rlcompleter
+except ImportError:
+    print 'readline module is not available'
