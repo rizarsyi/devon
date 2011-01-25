@@ -27,8 +27,7 @@ cp -R $SRC/gedit-plugin-autocomplete/* $PLUGINS
 
 # autocompletepython
 echo "=> autocompletepython"
-cp -R $SRC/gedit-plugin-autocompletepython/autocompletepython* $PLUGINS
-cp -R $SRC/pycodecompletation/pycodecompletation $PLUGINS/autocompletepython
+cp -R $SRC/gedit-plugin-python_completion/plugin/* $PLUGINS
 
 # classbrowser
 echo "=> classbrowser"

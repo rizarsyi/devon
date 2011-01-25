@@ -37,3 +37,6 @@
 [submodule "src/gedit-plugin-markup_preview"]
 	path = src/gedit-plugin-markup_preview
 	url = https://github.com/iromli/gedit-markup_preview.git
+[submodule "src/gedit-plugin-python_completion"]
+	path = src/gedit-plugin-python_completion
+	url = https://github.com/iromli/gedit-python_completion.git
