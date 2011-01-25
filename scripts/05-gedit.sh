@@ -7,6 +7,8 @@ fi
 # SCRIPT_DIR
 cd `dirname $0`
 
+#=== PLUGINS ===#
+
 PLUGINS=~/.gnome2/gedit/plugins
 SRC=../src
 GMATE_PLUGINS=$SRC/gmate/plugins
@@ -14,8 +16,6 @@ GMATE_PLUGINS=$SRC/gmate/plugins
 if [ ! -d $PLUGINS ]; then
     mkdir -p $PLUGINS
 fi
-
-#=== PLUGINS ===#
 
 # align
 echo "=> align"
@@ -46,9 +46,9 @@ cp -R $SRC/gedit-plugin-folding/* $PLUGINS
 echo "=> gemini"
 cp -R $GMATE_PLUGINS/gemini* $PLUGINS
 
-# zencoding
-echo "=> markdownpreview"
-cp -R $SRC/gedit-plugin-markdownpreview/plugins/* $PLUGINS
+# markup_preview
+echo "=> markup_preview"
+cp -R $SRC/gedit-plugin-markup_preview/plugin/* $PLUGINS
 
 # phpcompletion
 echo "=> phpcompletion"
@@ -98,6 +98,20 @@ echo "grab other plugins from package manager"
 yes | sudo aptitude install gedit-plugins
 echo "installed to /usr/lib/gedit-2/plugins"
 
+#=== STYLES ===#
+
+STYLES=~/.gnome2/gedit/styles
+
+if [ ! -d $STYLES ]; then
+    mkdir -p $STYLES
+fi
+
+# twilight_mod
+echo "=> twilight"
+cp -R $SRC/gmate/styles/twilight_mod.xml $STYLES/twilight_mod.xml
+
+echo "installed to ~/.gnome2/gedit/styles"
+
 #=== LANGUAGE-SPECS ===#
 
 SPECS=~/.local/share/gtksourceview-2.0/language-specs
@@ -110,9 +124,9 @@ fi
 echo "=> coffeescript"
 cp -R $SRC/gedit-lang-coffeescript/coffee_script.lang $SPECS/coffee_script.lang
 
-# coffeescript
+# markdown
 echo "=> markdown"
-cp -R $SRC/gedit-plugin-markdownpreview/language-specs/markdown.lang $SPECS/markdown.lang
+cp -R $SRC/gmate/lang-specs/markdown.lang $SPECS/markdown.lang
 
 echo "installed to ~/.local/share/gtksourceview-2.0/language-specs"
 
