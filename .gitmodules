@@ -34,12 +34,6 @@
 [submodule "src/gedit-plugin-tabs_extend"]
 	path = src/gedit-plugin-tabs_extend
 	url = git://github.com/nuxlli/gedit-tabsextend.git
-[submodule "src/gedit-plugin-autocompletepython"]
-	path = src/gedit-plugin-autocompletepython
-	url = https://github.com/nsigustavo/autocompletepythongeditplugin.git
-[submodule "src/pycodecompletation"]
-	path = src/pycodecompletation
-	url = https://github.com/nsigustavo/pycodecompletation.git
 [submodule "src/gedit-plugin-markup_preview"]
 	path = src/gedit-plugin-markup_preview
 	url = https://github.com/iromli/gedit-markup_preview.git
