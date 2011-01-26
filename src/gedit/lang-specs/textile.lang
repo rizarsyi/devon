@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ Author: James Brumond
+ Copyright (c) 2010 James Brumond
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+-->
+<language id="textile" _name="Textile" version="2.0" _section="Markup">
+  <metadata>
+    <property name="mimetypes">text/x-web-textile</property>
+    <property name="globs">*.textile</property>
+  </metadata>
+
+  <styles>
+    <style id="string"      _name="String"      map-to="def:string"/>
+    <style id="keyword"     _name="Keyword"     map-to="def:keyword"/>
+    <style id="rawhtml"     _name="RawHTML"     map-to="def:preprocessor"/>
+    <style id="statement"   _name="Statement"   map-to="def:statement"/>
+    <style id="important"   _name="Important"   map-to="def:special-constant"/>
+    <style id="modifier"    _name="Modifier"    map-to="def:type"/>
+    <style id="none"        _name="None"        map-to="def:other"/>
+  </styles>
+
+  <definitions>
+
+  <!-- Block Modifiers -->
+
+    <context id="tags" style-ref="keyword">
+      <prefix>^</prefix>
+      <suffix>\.{1,2}\s</suffix>
+      <keyword>h1</keyword>
+      <keyword>h2</keyword>
+      <keyword>h3</keyword>
+      <keyword>h4</keyword>
+      <keyword>h5</keyword>
+      <keyword>h6</keyword>
+      <keyword>p</keyword>
+      <keyword>bq</keyword>
+      <keyword>bc</keyword>
+      <keyword>pre</keyword>
+    </context>
+
+    <context id="list" style-ref="keyword">
+      <match>^[*#]+\s</match>
+    </context>
+
+    <context id="htmlblock" style-inside="true" style-ref="rawhtml">
+      <start>==</start>
+      <end>==</end>
+      <include>
+        <context sub-pattern="0" where="start" style-ref="important"/>
+        <context sub-pattern="0" where="end" style-ref="important"/>
+      </include>
+    </context>
+
+  <!-- Phrase Modifiers -->
+
+    <context id="code" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(@)</start>
+      <end>(@)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="emp" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(_)</start>
+      <end>(_)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="italic" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(__)</start>
+      <end>(__)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="strong" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(\*)</start>
+      <end>(\*)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="bold" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(\*\*)</start>
+      <end>(\*\*)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="citation" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(\?\?)</start>
+      <end>(\?\?)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="deleted" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(-)</start>
+      <end>(-)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="inserted" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(\+)</start>
+      <end>(\+)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="superscript" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(\^)</start>
+      <end>(\^)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="subscript" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])~</start>
+      <end>~([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="span" end-at-line-end="true" style-inside="true" style-ref="modifier">
+      <start>(^|[^a-zA-Z0-9])(%)</start>
+      <end>(%)([^a-zA-Z0-9]|$)</end>
+      <include>
+        <context sub-pattern="2" where="start" style-ref="modifier"/>
+        <context sub-pattern="1" where="end" style-ref="modifier"/>
+      </include>
+    </context>
+
+    <context id="acronym" style-ref="string">
+      <match>([A-Z0-9]+)(\(([^)]+)\))</match>
+    </context>
+
+  <!-- Images -->
+
+    <context id="image" end-at-line-end="true" style-ref="string">
+      <start>!([^\s!])</start>
+      <end>!(\:[\S]+)?</end>
+    </context>
+
+  <!-- Links -->
+
+    <context id="link" end-at-line-end="true" style-ref="statement">
+      <start>"([^\s"])</start>
+      <end>"(\:[\S]+)?</end>
+    </context>
+
+  <!-- Final Language Definition -->
+
+    <context id="textile">
+      <include>
+        <context ref="tags"/>
+        <context ref="htmlblock"/>
+        <context ref="list"/>
+        <context ref="code"/>
+        <context ref="emp"/>
+        <context ref="italic"/>
+        <context ref="strong"/>
+        <context ref="bold"/>
+        <context ref="citation"/>
+        <context ref="deleted"/>
+        <context ref="inserted"/>
+        <context ref="superscript"/>
+        <context ref="subscript"/>
+        <context ref="span"/>
+        <context ref="acronym"/>
+        <context ref="image"/>
+        <context ref="link"/>
+      </include>
+    </context>
+
+  </definitions>
+</language>

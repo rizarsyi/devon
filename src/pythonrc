@@ -4,3 +4,4 @@ try:
     readline.parse_and_bind('tab: complete')
 except ImportError:
     print 'readline module is not available'
+
