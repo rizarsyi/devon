@@ -2,9 +2,9 @@
 Loader=python
 Module=SplitView
 IAge=2
-Name=SplitView
-Description=Split view to compare 2 documents
-Authors=Unknown
-Copyright=Unlicensed
-Website=Unknown
+Name=Split View 3.0!
+Description=View 2 documents at once.
+Authors=Mike Doty <mike@psyguygames.com>
+Copyright=© Mike Doty 2010
+Website=http://www.psyguygames.com/
 

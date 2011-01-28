@@ -3,6 +3,7 @@
 #
 # Copyright (C) 2005 - Michele Campeotto
 # Copyright (C) 2010 - Mihail Szabolcs
+# Copyright (C) 2011 - Isman Firmansyah
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,10 +21,12 @@
 
 import gedit
 
+import os
 import sys
 import gtk
 import webkit
 import markdown
+import textile
 
 # Source: http://fgnass.posterous.com/github-markdown-preview
 HTML_TEMPLATE = """<html><head><style type="text/css">
@@ -65,6 +68,9 @@ UI = """
 </ui>"""
 
 class MarkupPreviewPlugin(gedit.Plugin):
+
+	MARKDOWN_EXTENSIONS = ['.markdown', '.mdown', '.mkdn', '.mkd', '.md']
+	TEXTILE_EXTENSIONS = ['.textile']
 
 	def __init__(self):
 		gedit.Plugin.__init__(self)
@@ -138,7 +144,14 @@ class MarkupPreviewPlugin(gedit.Plugin):
 			end = doc.get_iter_at_mark(doc.get_selection_bound())
 
 		text = doc.get_text(start, end)
-		html = HTML_TEMPLATE % (markdown.markdown(text),)
+
+		file_ext = os.path.splitext(doc.get_short_name_for_display())[-1]
+		if file_ext in self.TEXTILE_EXTENSIONS:
+			content = textile.textile(text)
+		elif file_ext in self.MARKDOWN_EXTENSIONS:
+			content = markdown.markdown(text)
+
+		html = HTML_TEMPLATE % (content,)
 
 		wndata["wv"].load_string(html,'text/html','iso-8859-15','about:blank')
 

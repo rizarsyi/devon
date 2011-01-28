@@ -1,6 +1,6 @@
 [Gedit Plugin]
 Loader=python
-Module=mp
+Module=markup_preview
 IAge=2
 Name=Markup Preview
 Description=Show the HTML version of the markup text you're editing using WebKit and the GitHub cascading stylesheet.
