@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" background="rgb(20,20,20)" caret-color="rgb(238,238,238)" folding-background="rgb(20,20,20)" folding-foreground="rgb(139,139,139)" language="text/css" line-highlight="rgb(28,28,28)" selection-background="rgb(255,184,134)" selection-foreground="rgb(29,29,29)">
+<category name="WHITESPACE" style="WHITESPACE"/>
+<style foreground="rgb(95,90,96)" id="WHITESPACE"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_CLASS" type="CLASS"/>
+<token style="LITERAL_STRING" type="STRING"/>
+</category>
+<style foreground="rgb(213,104,104)" id="LITERAL"/>
+<style foreground="rgb(238,238,238)" id="LITERAL_CLASS"/>
+<style foreground="rgb(143,157,106)" id="LITERAL_STRING"/>
+<category name="KEYWORD" style="KEYWORD"/>
+<style foreground="rgb(205,168,105)" id="KEYWORD"/>
+<category name="ERROR" style="ERROR"/>
+<style font-style="italic" foreground="rgb(231,126,126)" id="ERROR"/>
+<category name="IDENTIFIER" style="IDENTIFIER">
+<token style="IDENTIFIER_IDENTIFIER" type="IDENTIFIER"/>
+</category>
+<style foreground="rgb(205,168,105)" id="IDENTIFIER"/>
+<style foreground="rgb(155,133,157)" id="IDENTIFIER_IDENTIFIER"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR"/>
+<style foreground="rgb(238,238,238)" id="PUNCTUATOR"/>
+</colorizer>
