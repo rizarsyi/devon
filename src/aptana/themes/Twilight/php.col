@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" background="rgb(20,20,20)" caret-color="rgb(238,238,238)" folding-background="rgb(20,20,20)" folding-foreground="rgb(139,139,139)" language="text/php" line-highlight="rgb(28,28,28)" selection-background="rgb(255,184,134)" selection-foreground="rgb(20,20,20)">
+<category name="WHITESPACE" style="WHITESPACE"/>
+<style foreground="rgb(95,90,96)" id="WHITESPACE"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_NUMBER" type="NUMBER"/>
+</category>
+<style foreground="rgb(143,157,106)" id="LITERAL"/>
+<style foreground="rgb(207,106,76)" id="LITERAL_NUMBER"/>
+<category name="KEYWORD" style="KEYWORD"/>
+<style foreground="rgb(205,168,105)" id="KEYWORD"/>
+<category name="PREDEFINED" style="PREDEFINED"/>
+<style foreground="rgb(128,64,64)" id="PREDEFINED"/>
+<category name="ERROR" style="ERROR"/>
+<style foreground="rgb(231,126,126)" id="ERROR"/>
+<category name="SUPERGLOBAL" style="SUPERGLOBAL"/>
+<style font-weight="bold" foreground="rgb(117,135,166)" id="SUPERGLOBAL"/>
+<category name="IDENTIFIER" style="IDENTIFIER">
+<token style="IDENTIFIER_VARIABLE" type="VARIABLE"/>
+</category>
+<style foreground="rgb(238,238,238)" id="IDENTIFIER"/>
+<style foreground="rgb(117,135,166)" id="IDENTIFIER_VARIABLE"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_CURLY_CLOSE" type="CURLY_CLOSE"/>
+<token style="PUNCTUATOR_SQUARE_CLOSE" type="SQUARE_CLOSE"/>
+<token style="PUNCTUATOR_SQUARE_OPEN" type="SQUARE_OPEN"/>
+<token style="PUNCTUATOR_CURLY_OPEN" type="CURLY_OPEN"/>
+<token style="PUNCTUATOR_START_HEREDOC" type="START_HEREDOC"/>
+</category>
+<style foreground="rgb(205,168,105)" id="PUNCTUATOR"/>
+<style foreground="rgb(238,238,238)" id="PUNCTUATOR_CURLY_CLOSE"/>
+<style foreground="rgb(117,135,166)" id="PUNCTUATOR_SQUARE_CLOSE"/>
+<style foreground="rgb(117,135,166)" id="PUNCTUATOR_SQUARE_OPEN"/>
+<style foreground="rgb(238,238,238)" id="PUNCTUATOR_CURLY_OPEN"/>
+<style foreground="rgb(205,168,105)" id="PUNCTUATOR_START_HEREDOC"/>
+<category name="MAGIC" style="MAGIC"/>
+<style font-style="italic" font-weight="bold" foreground="rgb(117,135,166)" id="MAGIC"/>
+</colorizer>

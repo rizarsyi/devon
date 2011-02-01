@@ -6,7 +6,7 @@
 <token style="LITERAL_CLASS" type="CLASS"/>
 <token style="LITERAL_STRING" type="STRING"/>
 </category>
-<style foreground="rgb(213,104,104)" id="LITERAL"/>
+<style foreground="rgb(207,106,76)" id="LITERAL"/>
 <style foreground="rgb(238,238,238)" id="LITERAL_CLASS"/>
 <style foreground="rgb(143,157,106)" id="LITERAL_STRING"/>
 <category name="KEYWORD" style="KEYWORD"/>
