@@ -1,0 +1,3 @@
+[submodule "src/aptana/themes/twilight"]
+	path = src/aptana/themes/twilight
+	url = git://github.com/iromli/aptana-twilight-theme.git

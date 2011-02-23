@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # GIT AWESOMENESS
+sudo apt-add-repository ppa:git-core/ppa
+sudo apt-get update
 yes | sudo aptitude install git-core git-completion curl
 
 if [ -z `which hub` ]; then
