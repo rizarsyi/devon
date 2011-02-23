@@ -42,7 +42,7 @@ class ZenCodingPlugin(gedit.Plugin):
     def activate(self, window):
         actions = [
           ('ZenCodingMenuAction',     None, '_Zen Coding',                  None,            "Zen Coding tools",                            None),
-          ('ZenCodingExpandAction',   None, '_Expand abbreviation',         '<Ctrl>E',        "Expand abbreviation to raw HTML/CSS",         self.expand_abbreviation),
+          ('ZenCodingExpandAction',   None, '_Expand abbreviation',         '<Alt><Shift>E',        "Expand abbreviation to raw HTML/CSS",         self.expand_abbreviation),
           ('ZenCodingExpandWAction',  None, 'E_xpand dynamic abbreviation...', '<Ctrl><Alt>E',   "Dynamically expand abbreviation as you type",           self.expand_with_abbreviation),
           ('ZenCodingWrapAction',     None, '_Wrap with abbreviation...',   '<Ctrl><Shift>E', "Wrap with code expanded from abbreviation",   self.wrap_with_abbreviation),
           ('ZenCodingInwardAction',   None, 'Balance tag _inward',          '<Ctrl><Alt>I',   "Select inner tag's content",                  self.match_pair_inward),
@@ -87,7 +87,7 @@ class ZenCodingPlugin(gedit.Plugin):
 
     def expand_abbreviation(self, action, window):
         self.editor.expand_abbreviation(window)
-        
+
     def expand_with_abbreviation(self, action, window):
         self.editor.expand_with_abbreviation(window)
 
