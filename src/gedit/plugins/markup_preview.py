@@ -1,4 +1,4 @@
-# mp.py - HTML preview of Markdown formatted text in Gedit using WebKit and the
+# markup_preview.py - HTML preview of Markdown formatted text in Gedit using WebKit and the
 # GitHub cascading stylesheet.
 #
 # Copyright (C) 2005 - Michele Campeotto
@@ -27,6 +27,8 @@ import gtk
 import webkit
 import markdown
 import textile
+
+from docutils import core
 
 # Source: http://fgnass.posterous.com/github-markdown-preview
 HTML_TEMPLATE = """<html><head><style type="text/css">
@@ -69,92 +71,98 @@ UI = """
 
 class MarkupPreviewPlugin(gedit.Plugin):
 
-	MARKDOWN_EXTENSIONS = ['.markdown', '.mdown', '.mkdn', '.mkd', '.md']
-	TEXTILE_EXTENSIONS = ['.textile']
+    MARKDOWN_EXTENSIONS = ['.markdown', '.mdown', '.mkdn', '.mkd', '.md']
+    TEXTILE_EXTENSIONS = ['.textile']
+    RST_EXTENSIONS = ['.rst']
 
-	def __init__(self):
-		gedit.Plugin.__init__(self)
+    def __init__(self):
+        gedit.Plugin.__init__(self)
 
-	def activate(self, window):
+    def activate(self, window):
+        wndata = dict()
+        window.set_data("MPData", wndata)
 
-		wndata = dict()
-		window.set_data("MPData", wndata)
+        sw = gtk.ScrolledWindow()
+        sw.set_property("hscrollbar-policy",gtk.POLICY_AUTOMATIC)
+        sw.set_property("vscrollbar-policy",gtk.POLICY_AUTOMATIC)
+        sw.set_property("shadow-type",gtk.SHADOW_IN)
 
-		sw = gtk.ScrolledWindow()
-		sw.set_property("hscrollbar-policy",gtk.POLICY_AUTOMATIC)
-		sw.set_property("vscrollbar-policy",gtk.POLICY_AUTOMATIC)
-		sw.set_property("shadow-type",gtk.SHADOW_IN)
+        wv = webkit.WebView()
+        sw.add(wv)
+        sw.show_all()
 
-		wv = webkit.WebView()
-		sw.add(wv)
-		sw.show_all()
+        panel = window.get_bottom_panel()
 
-		panel = window.get_bottom_panel()
+        image = gtk.Image()
+        image.set_from_icon_name("gnome-mime-text-html", gtk.ICON_SIZE_MENU)
+        panel.add_item(sw, "Markup Preview", image)
 
-		image = gtk.Image()
-		image.set_from_icon_name("gnome-mime-text-html", gtk.ICON_SIZE_MENU)
-		panel.add_item(sw, "Markup Preview", image)
+        wndata["sw"] = sw
+        wndata["wv"] = wv
 
-		wndata["sw"] = sw
-		wndata["wv"] = wv
+        action = ("MP",
+                  None,
+                  "Markup Preview",
+                  "<Control><Shift>G",
+                  "Updates the markup HTML preview.",
+                  lambda x, y: self.update_preview(y))
 
-		action = ("MP",
-			  	None,
-			  	"Markup Preview",
-			  	"<Control><Shift>G",
-			  	"Updates the markup HTML preview.",
-			  	lambda x, y: self.update_preview(y))
+        wndata["ag"] = gtk.ActionGroup("MPActions")
+        wndata["ag"].add_actions([action], window)
 
-		wndata["ag"] = gtk.ActionGroup("MPActions")
-		wndata["ag"].add_actions([action], window)
+        manager = window.get_ui_manager()
+        manager.insert_action_group(wndata["ag"], -1)
 
-		manager = window.get_ui_manager()
-		manager.insert_action_group(wndata["ag"], -1)
+        wndata["ui_id"] = manager.add_ui_from_string(UI)
 
-		wndata["ui_id"] = manager.add_ui_from_string(UI)
+        manager.ensure_update()
 
-		manager.ensure_update()
+    def deactivate(self, window):
+        wndata = window.get_data("MPData")
 
-	def deactivate(self, window):
-		wndata = window.get_data("MPData")
+        manager = window.get_ui_manager()
+        manager.remove_ui(wndata["ui_id"])
+        manager.remove_action_group(wndata["ag"])
 
-		manager = window.get_ui_manager()
-		manager.remove_ui(wndata["ui_id"])
-		manager.remove_action_group(wndata["ag"])
+        panel = window.get_bottom_panel()
+        panel.remove_item(wndata["sw"])
 
-		panel = window.get_bottom_panel()
-		panel.remove_item(wndata["sw"])
+        manager.ensure_update()
 
-		manager.ensure_update()
+    def update_preview(self, window):
+        wndata = window.get_data("MPData")
 
-	def update_preview(self, window):
-		wndata = window.get_data("MPData")
+        view = window.get_active_view()
+        if not view:
+            return
 
-		view = window.get_active_view()
-		if not view:
-			 return
+        doc = view.get_buffer()
 
-		doc = view.get_buffer()
+        start = doc.get_start_iter()
+        end = doc.get_end_iter()
 
-		start = doc.get_start_iter()
-		end = doc.get_end_iter()
+        if doc.get_selection_bounds():
+            start = doc.get_iter_at_mark(doc.get_insert())
+            end = doc.get_iter_at_mark(doc.get_selection_bound())
 
-		if doc.get_selection_bounds():
-			start = doc.get_iter_at_mark(doc.get_insert())
-			end = doc.get_iter_at_mark(doc.get_selection_bound())
+        text = doc.get_text(start, end)
 
-		text = doc.get_text(start, end)
+        file_ext = os.path.splitext(doc.get_short_name_for_display())[-1]
+        if file_ext in self.TEXTILE_EXTENSIONS:
+            content = textile.textile(text)
+        elif file_ext in self.MARKDOWN_EXTENSIONS:
+            content = markdown.markdown(text)
+        elif file_ext in self.RST_EXTENSIONS:
+            extras = {'initial_header_level': '2'}
+            content = core.publish_parts(text,
+                                         writer_name='html',
+                                         settings_overrides=extras)
+            content = content.get('html_body')
 
-		file_ext = os.path.splitext(doc.get_short_name_for_display())[-1]
-		if file_ext in self.TEXTILE_EXTENSIONS:
-			content = textile.textile(text)
-		elif file_ext in self.MARKDOWN_EXTENSIONS:
-			content = markdown.markdown(text)
+        html = HTML_TEMPLATE % (content,)
 
-		html = HTML_TEMPLATE % (content,)
+        wndata["wv"].load_string(html,'text/html','iso-8859-15','about:blank')
 
-		wndata["wv"].load_string(html,'text/html','iso-8859-15','about:blank')
-
-		bottom = window.get_bottom_panel()
-		bottom.activate_item(wndata['sw'])
-		bottom.set_property('visible',True)
+        bottom = window.get_bottom_panel()
+        bottom.activate_item(wndata['sw'])
+        bottom.set_property('visible',True)
