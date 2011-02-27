@@ -1,4 +1,6 @@
 *.py[co]
 *~
 *.svn
+*.orig
+build
 
