@@ -7,6 +7,7 @@ Name[ru]=Дзэн-разработка
 Description=Enables Zen Coding's CSS and HTML tools for Gedit.
 Description[fr]=Des sélecteurs CSS pour écrire du code HTML.
 Description[ru]=Упрощает набор HTML и CSS с помощью механизма сокращений Zen Coding.
-Authors=Franck Marcia <franck.marcia@gmail.com>, Mike Crittenden <mike@mikethecoder.com>
-Copyright=Franck Marcia <franck.marcia@gmail.com>\nMike Crittenden <mike@mikethecoder.com>
-Website=http://github.com/mikecrittenden/zen-coding-gedit
+Authors=Franck Marcia <franck.marcia@gmail.com>, Mike Crittenden <mike@mikethecoder.com>, Isman Firmansyah <izman.romli@gmail.com>
+Copyright=Franck Marcia <franck.marcia@gmail.com>\nMike Crittenden <mike@mikethecoder.com>\nIsman Firmansyah <izman.romli@gmail.com>
+Website=http://github.com/iromli/gedit-zencoding
+
