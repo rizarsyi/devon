@@ -4,9 +4,8 @@
 # SOME UBUNTU PACKAGES                                                         #
 # ---------------------------------------------------------------------------- #
 
+echo "installing terminator"
 sudo add-apt-repository ppa:gnome-terminator
 sudo apt-get update
-
-echo "installing terminator"
 yes | sudo aptitude install terminator
 

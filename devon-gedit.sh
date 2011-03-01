@@ -14,7 +14,7 @@ if [ ! -d $PLUGINS ]; then
     mkdir -p $PLUGINS
 fi
 cp -R $SRC/plugins/* $PLUGINS/
-echo "grabbing other plugins from package manager"
+echo "grabbing gedit plugins from package manager"
 yes | sudo aptitude install gedit-plugins
 
 #=== LANGUAGE-SPECS ===#
