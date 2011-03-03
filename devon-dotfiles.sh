@@ -19,5 +19,7 @@ cp $SRC/bashrc ~/.bashrc
 
 echo "copying pythonrc to ~/.pythonrc"
 cp $SRC/pythonrc ~/.pythonrc
-set PYTHONSTARTUP=~/.pythonrc
+if [ ! -z `env | grep PYTHONSTARTUP` ]; then
+	set PYTHONSTARTUP=~/.pythonrc
+fi
 
