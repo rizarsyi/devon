@@ -1,5 +1,2 @@
-alias cakephp='/opt/Lib/cakephp-1.3.0/cake/console/cake'
-alias li3='/opt/Lib/lithium/libraries/lithium/console/li3'
-alias phrocco='/opt/Work/php/phrocco/bin/phrocco'
 alias erc='cat /etc/resolv.conf'
 

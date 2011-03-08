@@ -39,7 +39,7 @@ class QuickHighlightPlugin(gedit.Plugin):
             self.model.append([name])
 
         actions = [
-            ('QuickHighlightMode', gtk.STOCK_SELECT_COLOR, _('Quick Highlight Mode'), '<Control><Shift>h', _("Press Ctrl+Shift+H for quick highlight selection"), self.on_open)
+            ('QuickHighlightMode', gtk.STOCK_SELECT_COLOR, _('Quick Highlight Mode'), '<Alt><Shift>H', _("Press Ctrl+Shift+H for quick highlight selection"), self.on_open)
         ]
 
         action_group = gtk.ActionGroup("QuickHighlightModeActions")

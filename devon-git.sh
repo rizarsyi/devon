@@ -16,6 +16,6 @@ echo "installing defunkt's hub"
 curl http://chriswanstrath.com/hub/standalone -sLo ~/hub && chmod 755 ~/hub
 sudo mv ~/hub /usr/bin/hub && sudo chown root /usr/bin/hub
 if [ ! -z `alias -p | grep hub` ]; then
-    `cat alias git='hub' >> ~/.bash_aliases`
+    `cat alias git=hub >> ~/.bash_aliases`
 fi
 
