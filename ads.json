@@ -1,1 +1,16 @@
-{}
+{
+    "demo": {
+        "projectName": "demo",
+        "description": "lorem ipsum dolor sit amet",
+        "type": "community",
+        "author": "rizarsyi",
+        "version": "0.0.1",
+        "authorWebsite": "https://github.com/rizarsyi/devon",
+        "githubUri": "https://github.com/rizarsyi/devon",
+        "license": "MIT",
+        "lastUpdated": "1687579302155",
+        "tags": [
+            "test"
+        ]
+    }
+}
